@@ -28,7 +28,7 @@ def extract_rows_cols(table_name):
         try:
             cur = con.cursor()
             # fetchall() is used to fetch all records from result set
-            exec_string = 'select * from ' + table_name + ' WHERE ROWNUM <100'
+            exec_string = 'select * from ' + table_name #+ ' WHERE ROWNUM <100'
             cur.execute(exec_string)  # output of tuples
             rows = cur.fetchall()
             cols = [x[0] for x in cur.description]
